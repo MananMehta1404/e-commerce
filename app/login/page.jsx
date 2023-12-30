@@ -10,6 +10,11 @@ import { useState } from 'react';
 const Login = () => {
     const router = useRouter();
 
+    const token = Cookies.get('token');
+    if(token) {
+        router.push('/');
+    }
+
     const [userInput, setUserInput] = useState({
         username: '',
         password: '',

@@ -1,9 +1,12 @@
 "use client"
 
+import Footer from '@/components/Footer';
+import NavBar from '@/components/NavBar';
+import ProductsContainer from '@/components/ProductsContainer';
 import Cookies from 'js-cookie'
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 
-export default function Home() {
+const Home = () => {
   const router = useRouter();
   const token = Cookies.get('token');
 
@@ -12,6 +15,13 @@ export default function Home() {
   }
 
   return (
-    <h1>This is Home</h1>
+    <section className="w-full flex-center flex-col">
+      <NavBar />
+      {/* <Banner /> */}
+      <ProductsContainer />
+      <Footer />
+    </section>
   )
 }
+
+export default Home
