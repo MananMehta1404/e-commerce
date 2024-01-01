@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 const ProductCard = (props) => {
     const [disabled, setDisabled] = useState(false);
 
-    const { title, description, price, rating,  } = props
+    const { title, description, price, rating  } = props
 
     const router = useRouter();
 
@@ -43,7 +43,7 @@ const ProductCard = (props) => {
             <div className="flex items-center space-x-3">
                 {/* {user.displayName && (
                     <> */}
-                        <button disabled={disabled} className={` ${disabled} && "opacity-30" w-36 btn-primary py-3 px-4 poppins text-sm flex items-center justify-center space-x-3 text-center`}>
+                        <button disabled={disabled} className={` ${disabled && "opacity-30"} w-36 btn-primary py-3 px-4 poppins text-sm flex items-center justify-center space-x-3 text-center`} onClick={() => setDisabled(!disabled)}>
                             <BsCart2 />
                             <span>{disabled ? "Added" : "Add To Cart"}</span>
                         </button>
